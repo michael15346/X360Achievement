@@ -1,0 +1,245 @@
+﻿<Window x:Class="X360Achievement.MainWindow" IsHitTestVisible="False"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:X360Achievement"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="200" Width="300"
+        AllowsTransparency="True" WindowStyle="None"
+        Topmost="True" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Window.Resources>
+ 
+        <Storyboard x:Key="MyStoryboard" Completed="OnCompleted">
+
+            <DoubleAnimation Storyboard.TargetName="RingsGray" Storyboard.TargetProperty="Opacity" 
+                                         Duration="0:0:0.233" From="0" To="1"/>
+
+            <DoubleAnimation Storyboard.TargetName="XBox" Storyboard.TargetProperty="Opacity" 
+                                         Duration="0:0:0.233" From="0" To="1"/>
+
+            <DoubleAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Opacity" 
+                                         Duration="0:0:0.233" From="0" To="1"/>
+
+            <DoubleAnimation Storyboard.TargetName="XBox" Storyboard.TargetProperty="Width" 
+                                         Duration="0:0:0.233" From="16" To="60"/>
+            <DoubleAnimation Storyboard.TargetName="XBox" Storyboard.TargetProperty="Width" 
+                                         BeginTime="0:0:0.233" Duration="0:0:0.158" From="60" To="32"/>
+            
+            <DoubleAnimation Storyboard.TargetName="RingsGray" Storyboard.TargetProperty="Width" 
+                                         Duration="0:0:0.171" From="35" To="70"/>
+
+            <DoubleAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Width" 
+                                         Duration="0:0:0.171" From="35" To="60"/>
+            <DoubleAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Height" 
+                                         Duration="0:0:0.171" From="35" To="60"/>
+
+            <DoubleAnimation Storyboard.TargetName="RingsGray" Storyboard.TargetProperty="Width" 
+                                         BeginTime="0:0:0.171" Duration="0:0:0.233" From="70" To="45"/>
+
+            <DoubleAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Width" 
+                                         BeginTime="0:0:0.171" Duration="0:0:0.233" From="60" To="53"/>
+            <DoubleAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Height" 
+                                         BeginTime="0:0:0.171" Duration="0:0:0.233" From="60" To="53"/>
+            <DoubleAnimation Storyboard.TargetName="RingsGray" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:0.523" Duration="0:0:0" From="1" To="0"/>
+            <DoubleAnimation Storyboard.TargetName="Rings" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:0.523" Duration="0:0:0" From="0" To="1"/>
+
+            <DoubleAnimation Storyboard.TargetName="TopText" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:0.462" Duration="0:0:0.1" From="0" To="1"/>
+
+            <DoubleAnimation Storyboard.TargetName="BottomText" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:0.462" Duration="0:0:0.1" From="0" To="1"/>
+            
+            
+            <DoubleAnimation Storyboard.TargetName="XBox" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:0.766" Duration="0:0:0.1" From="1" To="0"/>
+            <DoubleAnimation Storyboard.TargetName="Trophy" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:0.866" Duration="0:0:0.1" From="0" To="1"/>
+
+
+            <DoubleAnimation Storyboard.TargetName="Trophy" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:1.549" Duration="0:0:0.1" From="1" To="0"/>
+            <DoubleAnimation Storyboard.TargetName="XBox" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:1.649" Duration="0:0:0.1" From="0" To="1"/>
+
+            <DoubleAnimation Storyboard.TargetName="XBox" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:2.332" Duration="0:0:0.1" From="1" To="0"/>
+            <DoubleAnimation Storyboard.TargetName="Trophy" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:2.432" Duration="0:0:0.1" From="0" To="1"/>
+
+
+            <DoubleAnimation Storyboard.TargetName="Trophy" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:3.115" Duration="0:0:0.1" From="1" To="0"/>
+            <DoubleAnimation Storyboard.TargetName="XBox" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:3.215" Duration="0:0:0.1" From="0" To="1"/>
+
+            
+            <DoubleAnimation Storyboard.TargetName="XBox" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:3.898" Duration="0:0:0.1" From="1" To="0"/>
+            <DoubleAnimation Storyboard.TargetName="Trophy" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:3.998" Duration="0:0:0.1" From="0" To="1"/>
+
+
+            <DoubleAnimation Storyboard.TargetName="Trophy" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:4.591" Duration="0:0:0.1" From="1" To="0"/>
+            <DoubleAnimation Storyboard.TargetName="RingsGray" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:4.691" Duration="0:0:0" From="0" To="1"/>
+            <DoubleAnimation Storyboard.TargetName="Rings" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:4.691" Duration="0:0:0" From="1" To="0"/>
+            <DoubleAnimation Storyboard.TargetName="XBox" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:4.691" Duration="0:0:0.1" From="0" To="1"/>
+
+
+            <DoubleAnimation Storyboard.TargetName="RingsGray" Storyboard.TargetProperty="Width" 
+                                         BeginTime="0:0:4.691" Duration="0:0:0.333" From="45" To="70"/>
+            <DoubleAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Width" 
+                                         BeginTime="0:0:4.691" Duration="0:0:0.333" From="53" To="60"/>
+            <DoubleAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Height" 
+                                         BeginTime="0:0:4.691" Duration="0:0:0.333" From="53" To="60"/>
+
+
+            <DoubleAnimation Storyboard.TargetName="RingsGray" Storyboard.TargetProperty="Width" 
+                                         BeginTime="0:0:5.024" Duration="0:0:0.333" From="70" To="0"/>
+            <DoubleAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Width" 
+                                         BeginTime="0:0:5.024" Duration="0:0:0.333" From="60" To="0"/>
+            <DoubleAnimation Storyboard.TargetName="Circle" Storyboard.TargetProperty="Height" 
+                                         BeginTime="0:0:5.024" Duration="0:0:0.333" From="60" To="0"/>
+
+            <DoubleAnimation Storyboard.TargetName="XBox" Storyboard.TargetProperty="Width" 
+                                         BeginTime="0:0:5.191" Duration="0:0:0.167" From="32" To="0"/>
+
+
+            <DoubleAnimation Storyboard.TargetName="TopText" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:5.084" Duration="0:0:0.1" From="1" To="0"/>
+
+            <DoubleAnimation Storyboard.TargetName="BottomText" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:5.084" Duration="0:0:0.1" From="1" To="0"/>
+
+            <DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="Opacity" 
+                                         BeginTime="0:0:5.257" Duration="0:0:0.2" From="1" To="0"/>
+            <DoubleAnimation Storyboard.TargetName="Border" Storyboard.TargetProperty="Effect.Opacity" 
+                                         BeginTime="0:0:5.257" Duration="0:0:0.2" From="1" To="0"/>
+
+        </Storyboard>
+        <Style TargetType="Border" x:Key="expand">
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="1"/>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="Visibility" Value="Visible">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                                     From="0"
+                                                    To="0"                
+                                                     Duration="0:00:0.2"/>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                                     From="0"
+                                                 To="1.2"
+                                                     Duration="0:00:0.323" 
+                                                 BeginTime="0:0:0.2"/>
+
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                                     From="1.2"
+                                                 To="1"
+                                                     Duration="0:00:0.1" 
+                                                 BeginTime="0:0:0.523"/>
+                                <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
+                                                     From="1"
+                                                 To="0"
+                                                     Duration="0:00:0.2" 
+                                                 BeginTime="0:0:5.257"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Window.Background >
+        <SolidColorBrush Opacity="0"/>
+    </Window.Background>
+    <Grid IsHitTestVisible="False" >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="LeftColumn" Width="1*" />
+            <ColumnDefinition x:Name="CenterColumn" Width="Auto" />
+            <ColumnDefinition x:Name="RightColumn" Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Border x:Name="Border" Panel.ZIndex="0" BorderThickness="3" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+        CornerRadius="30,30,30,30" BorderBrush="#0c0c0c" Background="#1d1d1d" Width="Auto" Height="60" Margin="5,0,0,50" Style="{StaticResource expand}">
+
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0"
+                          Color="#ffffff"
+                          Opacity="1"
+                          BlurRadius="6"/>
+            </Border.Effect>
+
+            <Grid x:Name="TopLevelGridDummy" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="TopTextDummy" Grid.Row="0" Grid.Column="2" Text="Achievement unlocked!" Margin="0,3,20,0" FontSize="16" Foreground="#00000000" FontFamily="Segoe UI"></TextBlock>
+                    <TextBlock x:Name="BottomTextDummy" Grid.Row="1" Grid.Column="2"  Text="15G - Dive for the first time!" Margin="0,1,20,0" FontSize="16" Foreground="#00000000" FontFamily="Segoe UI"></TextBlock>
+                </Grid>
+                <Ellipse x:Name="CircleDummy"
+    Width="53"
+    Height="53"
+    Fill="#00000000" Margin="0  ,0,0,0"/>
+                <Image x:Name="TrophyDummy" Panel.ZIndex="4" Width="40" Margin="0,0,0,0" Visibility="Hidden" Source="/Resources/trophy.png" />
+                <Image x:Name="RingsGrayDummy" Panel.ZIndex="3" Width="45" Margin="0,0,0,0" Visibility="Hidden" Source="/Resources/rings-gray.png" />
+            </Grid>
+        </Border>
+        
+        <Border x:Name="MarkupBorder" Panel.ZIndex="0" BorderThickness="3" Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+        CornerRadius="30,30,30,30" BorderBrush="#00000000" Background="#00000000" Width="Auto" Height="60" Margin="5,0,0,50" >
+            
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="0"
+                          Color="#00000000"
+                          Opacity="1"
+                          BlurRadius="6"/>
+            </Border.Effect>
+            <Grid x:Name="TopLevelGrid" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock x:Name="TopText" Grid.Row="0" Grid.Column="2" Text="Achievement unlocked!" Margin="0,3,20,0" FontSize="16" Opacity="0" Foreground="White" FontFamily="Segoe UI"></TextBlock>
+                    <TextBlock x:Name="BottomText" Grid.Row="1" Grid.Column="2"  Text="15G - Dive for the first time!" Margin="0,1,20,0" FontSize="16" Opacity="0" Foreground="White" FontFamily="Segoe UI"></TextBlock>
+                </Grid>
+                <Ellipse x:Name="Circle"
+    Width="53"
+    Height="53"
+    Fill="Black" Margin="0  ,0,0,0" Opacity="0" VerticalAlignment="Center"/>
+                <Image x:Name="Trophy" Panel.ZIndex="4" Opacity="0" Width="40" Margin="0,0,0,0" Source="/Resources/trophy.png" />
+                <Image x:Name="RingsGray" Panel.ZIndex="3" Width="45" Opacity="0" Margin="0,0,0,0" Source="/Resources/rings-gray.png" />
+                <Image x:Name="Rings" Panel.ZIndex="3" Opacity="0" Width="45" Margin="0,0,0,0" Source="/Resources/rings.png" />
+                <Image x:Name="XBox" Panel.ZIndex="4" Opacity="0" Width="32" Margin="0,0,0,0" Source="/Resources/pngegg.png" />
+            </Grid>
+        </Border>
+
+
+    </Grid>
+</Window>
