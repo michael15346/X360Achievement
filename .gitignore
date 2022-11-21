@@ -3,3 +3,4 @@ X360Achievement/obj
 /X360Achievement/Constants.Secret.cs
 .vs
 *.user
+X360Achievement/*.user
