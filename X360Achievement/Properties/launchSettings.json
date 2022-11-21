@@ -2,7 +2,8 @@
   "profiles": {
     "X360Achievement": {
       "commandName": "Project",
-      "commandLineArgs": "-p C:\\Users\\Public\\Documents\\Steam\\CODEX\\264710 -i 264710"
+      "commandLineArgs": "-p C:\\Users\\Public\\Documents\\Steam\\CODEX\\264710 -i 264710",
+      "nativeDebugging": true
     }
   }
 }

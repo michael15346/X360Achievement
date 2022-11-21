@@ -5,8 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Media.Animation;
+using System.Windows.Threading;
 
 namespace X360Achievement
 {
@@ -22,6 +25,7 @@ namespace X360Achievement
         static readonly List<String> list = new();
         private string path = "";
         private string id = "";
+        protected volatile bool thread_finished = false;
         private readonly string steamKey = "";
         private void Application_Startup(object sender, StartupEventArgs e)
         {
@@ -64,6 +68,7 @@ namespace X360Achievement
             watcher.NotifyFilter = NotifyFilters.LastWrite;
             watcher.Changed += new FileSystemEventHandler(OnWrite);
             watcher.EnableRaisingEvents = true;
+            
 
             IniFile iniFile = new(new IniOptions());
             do
@@ -78,9 +83,10 @@ namespace X360Achievement
                     list.Add(a.Value);
                 }
             }
-            Thread.Sleep(Timeout.Infinite);
-
-
+            new Thread(delegate ()
+            {
+                Thread.Sleep(Timeout.Infinite);
+            }).Start();
 
 
         }
@@ -121,27 +127,21 @@ namespace X360Achievement
                             Console.WriteLine("Unable to make SteamUserStats API Request: {0}", ex.Message);
                         }
                     }
-                    Thread viewerThread = new(delegate ()
-                    {
+                    Current.Dispatcher.Invoke(
+                        DispatcherPriority.Background,
+                        delegate () {
+                            MainWindow wnd = new();
+                            wnd.BottomText.Text = DisplayName;
+                            wnd.BottomTextDummy.Text = DisplayName;
+                            wnd.Show();
+                            wnd.CenterColumn.Width = new GridLength(wnd.CenterColumn.ActualWidth, GridUnitType.Pixel);
+                            ((Storyboard)wnd.Resources["MyStoryboard"]).Begin(wnd);
 
-                        MainWindow wnd = new();
-                        wnd.BottomText.Text = DisplayName;
-                        wnd.BottomTextDummy.Text = DisplayName;
-                        wnd.Show();
-                        wnd.CenterColumn.Width = new GridLength(wnd.CenterColumn.ActualWidth, GridUnitType.Pixel);
-                        ((Storyboard)wnd.Resources["MyStoryboard"]).Begin(wnd);
 
-
-                        var waveOut = new WaveOut();
-                        waveOut.Init(new WaveChannel32(new Mp3FileReader(new MemoryStream(X360Achievement.Properties.Resources.achievement))));
-                        waveOut.Play();
-                        System.Windows.Threading.Dispatcher.Run();
-
-                    });
-
-                    viewerThread.SetApartmentState(ApartmentState.STA);
-                    viewerThread.Start();
-
+                            var waveOut = new WaveOut();
+                            waveOut.Init(new WaveChannel32(new Mp3FileReader(new MemoryStream(X360Achievement.Properties.Resources.achievement))));
+                            waveOut.Play();
+                        });
                 }
             }
         }

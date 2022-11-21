@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Transactions;
 using System.Windows;
+using System.Windows.Media.Animation;
 
 namespace X360Achievement
 {
@@ -19,7 +21,7 @@ namespace X360Achievement
 
         private void OnCompleted(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }
